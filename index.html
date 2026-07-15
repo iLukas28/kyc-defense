@@ -360,7 +360,7 @@
       </tbody>
     </table>
     <p class="lead anim d3" style="margin-top:10px">Mismo transfer learning, mismo split, mismo entrenamiento. <b>Las tres empatan en accuracy (~99.9%)</b> y su costo es despreciable frente al LLM. Entonces, ¿cómo elegir?</p>
-    <p class="fine anim d4">La comparación de modelos de visión (qwen2.5vl vs Gemma, MiniCPM, Granite) está en el apéndice (tecla A).</p>
+    <p class="fine anim d4">La comparación de modelos de visión (qwen2.5vl vs Gemma) está en el apéndice (tecla A).</p>
   </section>
 
   <!-- 7 · RESULTADOS OSR -->
@@ -403,7 +403,7 @@
 
   <!-- SELECCIÓN DEL MODELO DE VISIÓN -->
   <section class="slide" data-label="13 / 17">
-    <div class="eyebrow teal anim">Resultados · ¿Qué modelo de visión?</div>
+    <div class="eyebrow teal anim">Resultados · Top 3 modelos de visión</div>
     <h2 class="anim d1">qwen2.5vl gana, con diferencia</h2>
     <table class="anim d2" style="max-width:940px; margin-top:6px">
       <thead><tr><th>Modelo</th><th>Tamaño</th><th>micro-F1</th><th>Exact</th><th>Latencia/img</th></tr></thead>
@@ -411,11 +411,9 @@
         <tr class="win"><td>qwen2.5vl:7b</td><td>6.0 GB</td><td>1.000</td><td>100%</td><td>8.8 s</td></tr>
         <tr><td>gemma4:26b (MoE)</td><td>17 GB</td><td>0.937</td><td>40%</td><td>49.3 s</td></tr>
         <tr><td>gemma4:e4b</td><td>9.6 GB</td><td>0.586</td><td>20%</td><td>20.7 s</td></tr>
-        <tr><td>granite3.2-vision:2b</td><td>2.4 GB</td><td>0.301</td><td>0%</td><td>10.0 s</td></tr>
-        <tr><td>minicpm-v:8b</td><td>5.5 GB</td><td>0.000</td><td>0%</td><td>6.4 s</td></tr>
       </tbody>
     </table>
-    <p class="lead anim d3" style="margin-top:10px">Misma estrategia para todos (imagen → JSON, <span style="font-family:var(--mono)">format="json"</span> + Pydantic, temperatura 0). Los demás <b>truncan el número, alucinan campos o son mucho más lentos</b>. qwen2.5vl es el mejor y el más rápido de los que sirven.</p>
+    <p class="lead anim d3" style="margin-top:10px">Los <b>3 mejores</b> de los modelos locales evaluados, con la misma estrategia (imagen → JSON, <span style="font-family:var(--mono)">format="json"</span> + Pydantic, temperatura 0). El resto que se probó <b>trunca el número, alucina campos o es mucho más lento</b>. qwen2.5vl es el mejor y el más rápido de los que sirven.</p>
   </section>
 
   <!-- 9 · DESPLIEGUE Y PRIVACIDAD -->
