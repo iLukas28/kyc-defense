@@ -258,6 +258,10 @@
     <div class="eyebrow anim">El contexto · quiénes somos</div>
     <h2 class="anim d1">Crédito en <span class="kicker">minutos</span>, desde el celular</h2>
     <p class="lead anim d2">Monet US es una <b>fintech</b> que da adelantos de salario y crédito de forma inmediata desde <b>app, webapp y WhatsApp</b>, incluso a quien la banca tradicional no atiende. Sin filas ni papeleo.</p>
+    <div class="anim d2" style="display:flex; align-items:baseline; gap:14px; margin-top:2px; flex-wrap:wrap">
+      <span style="font-size:clamp(30px,3.6vw,50px); font-weight:800; letter-spacing:-.02em; font-variant-numeric:tabular-nums; color:var(--blue)">1 513 392</span>
+      <span style="color:var(--muted); font-size:clamp(14px,1.35vw,19px)">usuarios registrados en Monet US</span>
+    </div>
     <div class="row anim d3" style="grid-template-columns:repeat(3,1fr); gap:20px; margin-top:6px">
       <div class="card"><span class="rail"></span><div class="tag">Producto</div><h3>Crédito y adelantos</h3><p>Adelantos de salario y microcrédito, solicitados y desembolsados desde cualquiera de sus canales.</p></div>
       <div class="card"><span class="rail"></span><div class="tag">Velocidad</div><h3>Aprobación en minutos</h3><p>Decisión y desembolso casi inmediatos, no en días.</p></div>
@@ -295,11 +299,11 @@
   <section class="slide" data-label="05 / 17">
     <div class="eyebrow red anim">Cómo se resuelve hoy en Monet US</div>
     <h2 class="anim d1">Hoy, esto se hace <span class="kicker-r">en la nube</span></h2>
-    <p class="lead anim d2">Estas validaciones corren en un <b>A/B test con un grupo privado de usuarios</b>: cada documento se envía a un modelo en la nube, vía la <b>API de OpenAI</b>, para clasificarlo y extraer sus campos. Funciona, pero tiene tres problemas de fondo:</p>
+    <p class="lead anim d2">Estas validaciones corren en un <b>A/B test con un grupo privado de usuarios</b>: de cada persona se toma la <b>foto frontal y trasera de la cédula</b>, que se envía a un modelo en la nube (<b>API de OpenAI</b>) para clasificarla y extraer sus campos, más un <b>selfie que se compara con la cédula vía Amazon Rekognition (AWS)</b> para confirmar que la persona es real. Funciona, pero tiene tres problemas de fondo:</p>
     <div class="row anim d3" style="grid-template-columns:repeat(3,1fr); gap:20px; margin-top:4px">
       <div class="card" style="border-color:rgba(242,80,63,.35)"><span class="rail" style="background:var(--red)"></span><div class="tag" style="color:var(--red)">Costo</div><h3>Los costos se disparan</h3><p>Se paga por cada llamada a la API; el gasto crece con cada usuario y cada documento.</p></div>
-      <div class="card" style="border-color:rgba(242,80,63,.35)"><span class="rail" style="background:var(--red)"></span><div class="tag" style="color:var(--red)">Riesgo</div><h3>Inseguro y dependiente</h3><p>Se depende de un proveedor externo, su disponibilidad y sus condiciones.</p></div>
-      <div class="card" style="border-color:rgba(242,80,63,.55)"><span class="rail" style="background:var(--red)"></span><div class="tag" style="color:var(--red)">Privacidad</div><h3>Expone los datos del usuario</h3><p>La cédula sale a un tercero. En una fintech, bajo <b>Habeas Data</b>, eso es lo más grave.</p></div>
+      <div class="card" style="border-color:rgba(242,80,63,.35)"><span class="rail" style="background:var(--red)"></span><div class="tag" style="color:var(--red)">Riesgo</div><h3>Inseguro y dependiente</h3><p>Se depende de proveedores externos (OpenAI y AWS), su disponibilidad y sus condiciones.</p></div>
+      <div class="card" style="border-color:rgba(242,80,63,.55)"><span class="rail" style="background:var(--red)"></span><div class="tag" style="color:var(--red)">Privacidad</div><h3>Expone los datos del usuario</h3><p>La cédula y el rostro salen a terceros (OpenAI y AWS). En una fintech, bajo <b>Habeas Data</b>, eso es lo más grave.</p></div>
     </div>
   </section>
 
