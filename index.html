@@ -537,7 +537,8 @@
     i=Math.max(0,Math.min(slides.length-1,n));
     slides.forEach((s,k)=>s.classList.toggle('active',k===i));
     counter.textContent=slides[i].dataset.label||'';
-    bar.style.width=((i+1)/slides.length*100)+'%';
+    const mainCount = appendixStart>=0 ? appendixStart : slides.length;
+    bar.style.width=(Math.min(i+1,mainCount)/mainCount*100)+'%';
     document.body.classList.toggle('cover', i===0);
   }
   document.getElementById('next').addEventListener('click',fwd);
